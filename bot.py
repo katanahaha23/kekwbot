@@ -8,9 +8,7 @@ def start(message):
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1 = types.KeyboardButton("Каталог")
-    btn2 = types.KeyboardButton("ТГ Канал")
-    btn3 = types.KeyboardButton("Контакты")
-    markup.add(btn1, btn2, btn3)
+    markup.add(btn1)
     
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
