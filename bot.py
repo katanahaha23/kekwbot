@@ -28,9 +28,12 @@ def get_text_messages(message):
     elif message.text == 'Контакты':
         bot.send_message(message.from_user.id, '@ccody')
 
-        
+
     elif message.text == 'Steam товары':
-        bot.send_message(message.from_user.id, "ты даун")
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton('НАЗАД')
+        markup.add(btn1)
+        bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
 
 
 
