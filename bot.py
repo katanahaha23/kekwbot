@@ -22,9 +22,11 @@ def get_text_messages(message):
         btn5 = types.KeyboardButton('НАЗАД')
         markup.add(btn1, btn2, btn3, btn4, btn5)
         bot.send_message(message.from_user.id, 'че тебе надо выбирай', reply_markup=markup) 
+
     elif message.text == 'ТГ Канал':
-        bot.send_message(message.from_user.id, "тут ссылка на канал", reply_markup=markup)
+        bot.send_message(message.from_user.id, "тут ссылка на канал")
     elif message.text == 'Контакты':
-        bot.send_message(message.from_user.id, '@coddy', reply_markup=markup)
+        bot.send_message(message.from_user.id, '@coddy')
+
 
 bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
