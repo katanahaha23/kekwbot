@@ -34,12 +34,7 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, 'чистка труб звонить 890342342233', parse_mode='Markdown')
     elif message.text == 'discord nitro':
         bot.send_message(message.from_user.id, 'ты даун?', parse_mode='Markdown')
-    elif message.text == 'назад':
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        btn1 = types.KeyboardButton("Каталог")
-        btn2 = types.KeyboardButton("ТГ Канал")
-        btn3 = types.KeyboardButton("Контакты")
-        markup.add(btn1, btn2, btn3)
+    
 
 
 bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
