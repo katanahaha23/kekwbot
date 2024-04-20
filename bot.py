@@ -24,14 +24,14 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, 'че тебе надо', reply_markup=markup) #ответ бота
 
 
-    elif message.text == 'Стим':
-        bot.send_message(message.from_user.id, 'Ле куда преш', parse_mode= 'Markdown')
-    elif message.text == 'Стим услуги':
-        bot.send_message(message.from_user.id, 'сдачу не дам', parse_mode='Markdown')
-    elif message.text == 'тг прем':
-        bot.send_message(message.from_user.id, 'чистка труб звонить 890342342233', parse_mode='Markdown')
-    elif message.text == 'discord nitro':
-        bot.send_message(message.from_user.id, 'ты даун?', parse_mode='Markdown')
+        if message.text == 'Стим':
+            bot.send_message(message.from_user.id, 'Ле куда преш', parse_mode= 'Markdown')
+        elif message.text == 'Стим услуги':
+            bot.send_message(message.from_user.id, 'сдачу не дам', parse_mode='Markdown')
+        elif message.text == 'тг прем':
+            bot.send_message(message.from_user.id, 'чистка труб звонить 890342342233', parse_mode='Markdown')
+        elif message.text == 'discord nitro':
+            bot.send_message(message.from_user.id, 'ты даун?', parse_mode='Markdown')
     
 
 
