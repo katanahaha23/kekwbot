@@ -19,7 +19,7 @@ def get_text_messages(message):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True) #создание новых кнопок
         btn1 = types.KeyboardButton('Стим')
         btn2 = types.KeyboardButton('Стим услуги')
-        btn3 = types.KeyboardButton('Тг прем')
+        btn3 = types.KeyboardButton('тг прем')
         btn4 = types.KeyboardButton('discord nitro')
        
         markup.add(btn1, btn2, btn3, btn4)
@@ -30,7 +30,7 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, 'Ле куда преш', parse_mode= 'Markdown')
     elif message.text == 'Стим услуги':
         bot.send_message(message.from_user.id, 'сдачу не дам', parse_mode='Markdown')
-    elif message.text == 'Тг прем':
+    elif message.text == 'тг прем':
         bot.send_message(message.from_user.id, 'чистка труб звонить 890342342233', parse_mode='Markdown')
     elif message.text == 'discord nitro':
         bot.send_message(message.from_user.id, 'ты даун?', parse_mode='Markdown')
