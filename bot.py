@@ -31,9 +31,26 @@ def get_text_messages(message):
 
     elif message.text == 'Steam товары':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        btn1 = types.KeyboardButton('НАЗАД')
+        btn1 = types.KeyboardButton('Вернуться')
+        markup.add(btn1)
+        bot.send_message(message.from_user.id, "Выберите товар из списка:",reply_markup=markup)
+    elif message.text == 'Steam услуги':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton('Вернуться')
+        markup.add(btn1)
+        bot.send_message(message.from_user.id, "Выберите услугу из списка:",reply_markup=markup)
+    elif message.text == 'Telegram Premium':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton('Вернуться')
+        markup.add(btn1)
+        bot.send_message(message.from_user.id, "",reply_markup=markup)
+    elif message.text == 'Discord Nitro':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
         bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
+    
+    
 
 
 
