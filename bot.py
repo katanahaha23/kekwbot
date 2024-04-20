@@ -21,8 +21,8 @@ def get_text_messages(message):
         btn2 = types.KeyboardButton('Стим услуги')
         btn3 = types.KeyboardButton('Тг прем')
         btn4 = types.KeyboardButton('discord nitro')
-        btn5 = types.KeyboardButton('назад')
-        markup.add(btn1, btn2, btn3, btn4, btn5)
+       
+        markup.add(btn1, btn2, btn3, btn4)
         bot.send_message(message.from_user.id, 'че тебе надо', reply_markup=markup) #ответ бота
 
 
