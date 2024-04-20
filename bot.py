@@ -7,17 +7,24 @@ bot = telebot.TeleBot('7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU')
 def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1 = types.KeyboardButton('Каталог')
-    markup.add(btn1)
-    bot.send_message(message.from_user.id, "Ты дурак ебаный!", reply_markup=markup)
+    btn2 = types.KeyboardButton('ТГ Канал')
+    btn3 = types.KeyboardButton('Контакты')
+    markup.add(btn1, btn2, btn3)
+    bot.send_message(message.from_user.id, "Общая информация o боте будет в этом сообщении", reply_markup=markup)
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     if message.text == 'Каталог':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True) 
-        btn1 = types.KeyboardButton('пиздапень')
-        btn2 = types.KeyboardButton('хуепень')
-        btn3 = types.KeyboardButton('залупень')
-        markup.add(btn1, btn2, btn3)
-        bot.send_message(message.from_user.id, 'ты хуй', reply_markup=markup) 
-
+        btn1 = types.KeyboardButton('Steam товары')
+        btn2 = types.KeyboardButton('Steam услуги')
+        btn3 = types.KeyboardButton('Telegram Premium')
+        btn4 = types.KeyboardButton('Discord Nitro')
+        btn5 = types.KeyboardButton('НАЗАД')
+        markup.add(btn1, btn2, btn3, btn4, btn5)
+        bot.send_message(message.from_user.id, 'че тебе надо выбирай', reply_markup=markup) 
+    elif message.text == 'ТГ Канал':
+        bot.send_message(message.from_user.id, "тут ссылка на канал", reply_markup=markup)
+    elif message.text == 'Контакты':
+        bot.send_message(message.from_user.id, '@coddy', reply_markup=markup)
 
 bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
