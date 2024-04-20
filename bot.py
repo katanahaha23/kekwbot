@@ -10,28 +10,36 @@ def start(message):
     btn1 = types.KeyboardButton("Каталог")
     btn2 = types.KeyboardButton("ТГ Канал")
     btn3 = types.KeyboardButton("Контакты")
-    markup.add(btn1)
+    markup.add(btn1, btn2, btn3)
     
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
 
-    if message.text == '👋 Поздороваться':
+    if message.text == 'Каталог':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True) #создание новых кнопок
-        btn1 = types.KeyboardButton('Как стать автором на Хабре?')
-        btn2 = types.KeyboardButton('Правила сайта')
-        btn3 = types.KeyboardButton('Советы по оформлению публикации')
+        btn1 = types.KeyboardButton('Стим')
+        btn2 = types.KeyboardButton('Стим услуги')
+        btn3 = types.KeyboardButton('Тг прем')
+        btn4 = types.KeyboardButton('discord nitro')
+        btn5 = types.KeyboardButton('назад')
+        markup.add(btn1, btn2, btn3, btn4, btn5)
+        bot.send_message(message.from_user.id, 'че тебе надо', reply_markup=markup) #ответ бота
+
+
+    elif message.text == 'Стим':
+        bot.send_message(message.from_user.id, 'Ле куда преш', parse_mode= 'Markdown')
+    elif message.text == 'Стим услуги':
+        bot.send_message(message.from_user.id, 'сдачу не дам', parse_mode='Markdown')
+    elif message.text == 'Тг прем':
+        bot.send_message(message.from_user.id, 'чистка труб звонить 890342342233', parse_mode='Markdown')
+    elif message.text == 'discord nitro':
+        bot.send_message(message.from_user.id, 'ты даун?', parse_mode='Markdown')
+    elif message.text == 'назад':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Каталог")
+        btn2 = types.KeyboardButton("ТГ Канал")
+        btn3 = types.KeyboardButton("Контакты")
         markup.add(btn1, btn2, btn3)
-        bot.send_message(message.from_user.id, '❓ Задайте интересующий вас вопрос', reply_markup=markup) #ответ бота
-
-
-    elif message.text == 'Как стать автором на Хабре?':
-        bot.send_message(message.from_user.id, 'Вы пишете первый пост, его проверяют модераторы, и, если всё хорошо, отправляют в основную ленту Хабра, где он набирает просмотры, комментарии и рейтинг. В дальнейшем премодерация уже не понадобится. Если с постом что-то не так, вас попросят его доработать.\n \nПолный текст можно прочитать по ' + '[ссылке](https://habr.com/ru/sandbox/start/)', parse_mode='Markdown')
-
-    elif message.text == 'Правила сайта':
-        bot.send_message(message.from_user.id, 'Прочитать правила сайта вы можете по ' + '[ссылке](https://habr.com/ru/docs/help/rules/)', parse_mode='Markdown')
-
-    elif message.text == 'Советы по оформлению публикации':
-        bot.send_message(message.from_user.id, 'Подробно про советы по оформлению публикаций прочитать по ' + '[ссылке](https://habr.com/ru/docs/companies/design/)', parse_mode='Markdown')
 
 
 bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
