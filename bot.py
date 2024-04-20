@@ -24,9 +24,9 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, 'че тебе надо выбирай', reply_markup=markup) 
 
     elif message.text == 'ТГ Канал':
-        bot.send_message(message.from_user.id, "тут ссылка на канал", parse_mode='Markdown')
+        bot.send_message(message.from_user.id, "тут ссылка на канал")
     elif message.text == 'Контакты':
-        bot.send_message(message.from_user.id, '@coddy', parse_mode='Markdown')
+        bot.send_message(message.from_user.id, '@coddy')
 
 
 bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
