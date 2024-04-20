@@ -28,10 +28,10 @@ def get_text_messages(message):
     elif message.text == 'Контакты':
         bot.send_message(message.from_user.id, '@ccody')
 
-@bot.message_handler(content_types=['text'])
-def get_text_messages(message):
-    if message.text == 'Steam товары':
+        
+    elif message.text == 'Steam товары':
         bot.send_message(message.from_user.id, "ты даун")
+
 
 
 
