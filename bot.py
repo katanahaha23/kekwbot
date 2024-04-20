@@ -31,7 +31,7 @@ def get_text_messages(message):
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     if message.text == 'Steam товары':
-            bot.send_message(message.from_user.id, "ты даун")
+        bot.send_message(message.from_user.id, "ты даун")
 
 
 
