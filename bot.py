@@ -30,12 +30,9 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, "тут ссылка на канал")
     elif message.text == 'Контакты':
         bot.send_message(message.from_user.id, '@ccody')
-    
 
 
-@bot.message_handler(content_types=['text'])
-def uslugi(message):
-    if message.text == 'Steam товары':
+    elif message.text == 'Steam товары':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
@@ -55,6 +52,8 @@ def uslugi(message):
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
         bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
+
+
     
 
 
