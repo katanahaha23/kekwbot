@@ -23,11 +23,21 @@ def get_text_messages(message):
         btn5 = types.KeyboardButton('НАЗАД')
         markup.add(btn1, btn2, btn3, btn4, btn5)
         bot.send_message(message.from_user.id, 'че тебе надо выбирай', reply_markup=markup) 
+
+    #снизу чисто инфа
+    
     elif message.text == 'ТГ Канал':
         bot.send_message(message.from_user.id, "тут ссылка на канал")
     elif message.text == 'Контакты':
         bot.send_message(message.from_user.id, '@ccody')
 
+#отдельно кнопки для каждой услуги
+
+@bot.message_handler(content_types=['text'])
+def get_usluges(message):
+
+    if message.text == 'НАЗАД':
+        start(message)
 
     elif message.text == 'Steam товары':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -50,8 +60,7 @@ def get_text_messages(message):
         markup.add(btn1)
         bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
 
-    elif message.text == 'НАЗАД':
-        start(message)
+    
         
     
         
