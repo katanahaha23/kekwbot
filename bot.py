@@ -44,9 +44,7 @@ def get_usluges(message):
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
         bot.send_message(message.from_user.id, "Выберите товар из списка:",reply_markup=markup)
-        if message.text == 'Вернуться':
-            get_text_messages(message)
-            
+
     elif message.text == 'Steam услуги':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
@@ -62,6 +60,12 @@ def get_usluges(message):
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
         bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
+
+@bot.message_handler(content_types=['text'])
+def get_back(message):
+    if message.text == 'Вернуться':
+        get_usluges(message)
+
 
     
         
