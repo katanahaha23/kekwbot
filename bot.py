@@ -38,7 +38,7 @@ def get_text_messages(message):
 
 
 @bot.message_handler(commands=['НАЗАД'])
-def get_back(message):
+def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1 = types.KeyboardButton('Каталог')
     btn2 = types.KeyboardButton('ТГ Канал')
@@ -51,10 +51,7 @@ def get_back(message):
 @bot.message_handler(content_types=['text'])
 def get_usluges(message):
 
-    if message.text == 'Вернуться':
-        get_text_messages(message)
-
-    elif message.text == 'Steam товары':
+    if message.text == 'Steam товары':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
@@ -75,6 +72,7 @@ def get_usluges(message):
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
         bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
+    
     
 
 
