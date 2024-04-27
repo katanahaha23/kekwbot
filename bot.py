@@ -34,7 +34,7 @@ def get_text_messages(message):
 
 
 @bot.message_handler(content_types=['text'])
-def get_usluges(message):
+def uslugi(message):
     if message.text == 'Steam товары':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
