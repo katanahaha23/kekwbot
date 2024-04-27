@@ -49,7 +49,7 @@ def get_usluges(message):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
-        bot.send_message(message.from_user.id, "Ждите, наш администратор скоро пришлет реквизиты для пополнения. Не забудьте прикрепить квитанцию об оплате",reply_markup=markup)
+        bot.send_message(message.from_user.id, "Ждите, наш администратор скоро пришлет реквизиты для пополнения. He забудьте прикрепить квитанцию o оплате",reply_markup=markup)
     elif message.text == 'Discord Nitro':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
