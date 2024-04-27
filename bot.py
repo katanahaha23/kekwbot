@@ -36,7 +36,7 @@ def get_text_messages(message):
 @bot.message_handler(content_types=['text'])
 def get_usluges(message):
 
-    if message.text == 'НАЗАД':
+    if message.text == 'Вернуться':
         start(message)
 
     elif message.text == 'Steam товары':
@@ -60,6 +60,7 @@ def get_usluges(message):
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
         bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
+    
 
 @bot.message_handler(content_types=['text'])
 def get_back(message):
