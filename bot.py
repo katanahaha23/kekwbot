@@ -5,7 +5,7 @@ bot = telebot.TeleBot('7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU')
 
 @bot.message_handler(commands=['Меню'])
 def menu(message):
-    start_menu = True
+    
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1 = types.KeyboardButton('Каталог')
     btn2 = types.KeyboardButton('ТГ Канал')
