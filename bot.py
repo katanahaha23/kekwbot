@@ -25,7 +25,7 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, 'че тебе надо выбирай', reply_markup=markup) 
 
     #снизу чисто инфа
-    
+
     elif message.text == 'ТГ Канал':
         bot.send_message(message.from_user.id, "тут ссылка на канал")
     elif message.text == 'Контакты':
@@ -44,6 +44,9 @@ def get_usluges(message):
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
         bot.send_message(message.from_user.id, "Выберите товар из списка:",reply_markup=markup)
+        if message.text == 'Вернуться':
+            get_text_messages(message)
+            
     elif message.text == 'Steam услуги':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
