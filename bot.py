@@ -55,7 +55,14 @@ def get_text_messages(message):
         btn2 = types.KeyboardButton('ТГ Канал')
         btn3 = types.KeyboardButton('Контакты')
         markup.add(btn1, btn2, btn3)
-
+    elif message.text == 'Вернуться':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True) 
+        btn1 = types.KeyboardButton('Steam товары')
+        btn2 = types.KeyboardButton('Steam услуги')
+        btn3 = types.KeyboardButton('Telegram Premium')
+        btn4 = types.KeyboardButton('Discord Nitro')
+        btn5 = types.KeyboardButton('НАЗАД')
+        markup.add(btn1, btn2, btn3, btn4, btn5)
     
 
 
