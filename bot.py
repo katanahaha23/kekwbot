@@ -23,7 +23,7 @@ def get_text_messages(message):
         btn2 = types.KeyboardButton('Steam услуги')
         btn3 = types.KeyboardButton('Telegram Premium')
         btn4 = types.KeyboardButton('Discord Nitro')
-        btn5 = types.KeyboardButton('/back')
+        btn5 = types.KeyboardButton('НАЗАД')
         markup.add(btn1, btn2, btn3, btn4, btn5)
         bot.send_message(message.from_user.id, 'че тебе надо выбирай', reply_markup=markup) 
     elif message.text == 'ТГ Канал':
