@@ -13,6 +13,8 @@ def start(message):
     markup.add(btn1, btn2, btn3)
     bot.send_message(message.from_user.id, "Общая информация o боте будет в этом сообщении", reply_markup=markup)
 
+
+
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     if message.text == 'Каталог':
@@ -24,18 +26,16 @@ def get_text_messages(message):
         btn5 = types.KeyboardButton('/back')
         markup.add(btn1, btn2, btn3, btn4, btn5)
         bot.send_message(message.from_user.id, 'че тебе надо выбирай', reply_markup=markup) 
-
-#снизу чисто инфа
-
     elif message.text == 'ТГ Канал':
         bot.send_message(message.from_user.id, "тут ссылка на канал")
     elif message.text == 'Контакты':
-
-
-
-
         bot.send_message(message.from_user.id, '@ccody')
-    elif message.text == 'Steam товары':
+    
+
+
+@bot.message_handler(content_types=['text'])
+def get_usluges(message):
+    if message.text == 'Steam товары':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
@@ -55,19 +55,9 @@ def get_text_messages(message):
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
         bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
+    
 
 
-
-
-
-@bot.message_handler(commands=['back'])
-def start(message):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    btn1 = types.KeyboardButton('Каталог')
-    btn2 = types.KeyboardButton('ТГ Канал')
-    btn3 = types.KeyboardButton('Контакты')
-    markup.add(btn1, btn2, btn3)
-    bot.send_message(message.from_user.id, "Общая информация o боте будет в этом сообщении", reply_markup=markup)
 
 
 
