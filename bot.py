@@ -33,11 +33,17 @@ def get_text_messages(message):
 
 #отдельно кнопки для каждой услуги
 
+@bot.message_handler(content_types=['НАЗАД'])
+def get_back(message):
+    if message.text == 'НАЗАД':
+        start(message)
+
+
 @bot.message_handler(content_types=['text'])
 def get_usluges(message):
 
     if message.text == 'Вернуться':
-        start(message)
+        get_text_messages(message)
 
     elif message.text == 'Steam товары':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -62,10 +68,7 @@ def get_usluges(message):
         bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
     
 
-@bot.message_handler(content_types=['text'])
-def get_back(message):
-    if message.text == 'Вернуться':
-        get_usluges(message)
+
 
 
     
