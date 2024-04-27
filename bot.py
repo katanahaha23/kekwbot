@@ -49,7 +49,15 @@ def get_text_messages(message):
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
         bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
-    
+    elif message.text == 'НАЗАД':
+        @bot.message_handler(commands=['start'])
+        def start(message):
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            btn1 = types.KeyboardButton('Каталог')
+            btn2 = types.KeyboardButton('ТГ Канал')
+            btn3 = types.KeyboardButton('Контакты')
+            markup.add(btn1, btn2, btn3)
+
     
 
 
