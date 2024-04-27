@@ -30,17 +30,16 @@ def get_text_messages(message):
     elif message.text == 'ТГ Канал':
         bot.send_message(message.from_user.id, "тут ссылка на канал")
     elif message.text == 'Контакты':
-        bot.send_message(message.from_user.id, '@ccody')
-    
-@bot.message_handler(content_types=['text'])
-def get_usluges(message):
 
-    if message.text == 'Steam товары':
+
+
+
+        bot.send_message(message.from_user.id, '@ccody')
+    elif message.text == 'Steam товары':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
         bot.send_message(message.from_user.id, "Выберите товар из списка:",reply_markup=markup)
-
     elif message.text == 'Steam услуги':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
@@ -56,8 +55,8 @@ def get_usluges(message):
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
         bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
-    
-#отдельно кнопки для каждой услуги
+
+
 
 
 
