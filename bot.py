@@ -52,6 +52,9 @@ def get_text_messages(message):
         markup.add(btn1)
         bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
     
+    elif message.text == 'Вернуться':
+        get_text_messages(message)
+
 
 
 
