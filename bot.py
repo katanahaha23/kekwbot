@@ -52,7 +52,7 @@ def get_text_messages(message):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
-        bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
+        bot.send_message(message.from_user.id, "ты даун")
     
 
 
