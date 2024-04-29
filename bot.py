@@ -30,8 +30,9 @@ async def cmd_start(message: types.Message):
     )
     await message.answer("Добро пожаловать в СЫС ЭНТЕРТЕЙМЕНТ бота", reply_markup=keyboard)
 
+# Ответ на команду Каталог
 @dp.message(F.text.lower() == "Каталог")
-async def cataloge(message: types.Message):
+async def cmd_cataloge(message: types.Message):
     kb = [
         [
             types.KeyboardButton(text="Товары Steam"),
