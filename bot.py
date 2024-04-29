@@ -13,9 +13,6 @@ bot = Bot(token="7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
 # Диспетчер
 dp = Dispatcher()
 
-#запуск бота через кнопку
-
-
 
 # Хэндлер на команду /start
 @dp.message(Command("start"))
@@ -36,23 +33,16 @@ async def cmd_start(message: types.Message):
 
 # Ответ на команду Каталог
 @dp.message(F.text.lower() == "каталог")
-async def cataloge(message: types.Message):
-    kb = [
-        [
-            types.KeyboardButton(text="Steam услуги"),
-            types.KeyboardButton(text="Steam товары"),
-            types.KeyboardButton(text="Telegram Premium"),
-            types.KeyboardButton(text="Discord Nitro"),
-            types.KeyboardButton(text="PornHub +"),
-            types.KeyboardButton(text="Назад")
-        ],
-    ]
-    keyboard = types.ReplyKeyboardMarkup(
-        keyboard=kb,
-        resize_keyboard=True,
-        input_field_placeholder="Выберите..."
-    )
-    await message.answer("Выберите категорию:", reply_markup=keyboard)
+async def reply_builder(message: types.Message):
+    builder = ReplyKeyboardBuilder()
+    builder.add(types.KeyboardButton(text="Steam услуги")),
+    builder.add(types.KeyboardButton(text="Steam товары")),
+    builder.add(types.KeyboardButton(text="Telegram Premium")),
+    builder.add(types.KeyboardButton(text="Discord Nitro")),
+    builder.add(types.KeyboardButton(text="PornHub +")),
+    builder.add(types.KeyboardButton(text="Назад"))
+    builder.adjust(3)
+    await message.answer("Выберите категорию:",reply_markup=builder.as_markup(resize_keyboard=True),)
 
 
 # Ответ на команду ТГ Канал
