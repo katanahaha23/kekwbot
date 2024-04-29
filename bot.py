@@ -62,7 +62,7 @@ async def review(message: types.Message):
 
 # Ответ на команду Назад
 @dp.message(F.text.lower() == "назад")
-async def cmd_start(message: types.Message):
+async def nazad(message: types.Message):
     kb = [
         [
             types.KeyboardButton(text="Каталог"),
