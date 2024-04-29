@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters.command import Command
 from aiogram import F
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
-
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 # Включаем логирование, чтобы не пропустить важные сообщения
 logging.basicConfig(level=logging.INFO)
@@ -30,18 +30,50 @@ async def cmd_start(message: types.Message):
     )
     await message.answer("Добро пожаловать в СЫС ЭНТЕРТЕЙМЕНТ бота", reply_markup=keyboard)
 
-# Ответ на команду Каталог, Тг канал и Отзывы
+# Ответ на команду Каталог
 @dp.message(F.text.lower() == "каталог")
 async def cataloge(message: types.Message):
-    await message.answer("Выберите категорию:")
+    kb = [
+        [
+            types.KeyboardButton(text="Каталог"),
+            types.KeyboardButton(text="Тг Канал"),
+            types.KeyboardButton(text="Отзывы")
+        ],
+    ]
+    keyboard = types.ReplyKeyboardMarkup(
+        keyboard=kb,
+        resize_keyboard=True,
+        input_field_placeholder="Выберите..."
+    )
+    await message.answer("Выберите категорию:", reply_markup=keyboard)
 
+
+# Ответ на команду ТГ Канал
 @dp.message(F.text.lower() == "тг канал")
-async def cataloge(message: types.Message):
-    await message.answer("Выберите категорию:")
+async def tg_chan(message: types.Message):
+    kb = [
+        [
+            types.KeyboardButton(text="Каталог"),
+            types.KeyboardButton(text="Тг Канал"),
+            types.KeyboardButton(text="Отзывы")
+        ],
+    ]
+    keyboard = types.ReplyKeyboardMarkup(
+        keyboard=kb,
+        resize_keyboard=True,
+        input_field_placeholder="Выберите..."
+    )
+    await message.answer("https://t.me/farmcs2news")
 
+
+# Ответ на команду Отзывы
 @dp.message(F.text.lower() == "отзывы")
-async def cataloge(message: types.Message):
-    await message.answer("Выберите категорию:")
+async def review(message: types.Message):
+    builder = InlineKeyboardBuilder()
+    builder.row(types.InlineKeyboardButton(
+        text="ОТЗЫВЫ", url="https://github.com")
+    )
+    await message.answer('Выберите ссылку',reply_markup=builder.as_markup(),)
 
 
 # Запуск процесса поллинга новых апдейтов
