@@ -75,7 +75,7 @@ async def nazad(message: types.Message):
         resize_keyboard=True,
         input_field_placeholder="Выберите..."
     )
-    await message.answer("", reply_markup=keyboard)
+    
 
 
 # Запуск процесса поллинга новых апдейтов
