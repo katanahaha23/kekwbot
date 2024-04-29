@@ -30,8 +30,16 @@ async def cmd_start(message: types.Message):
     )
     await message.answer("Добро пожаловать в СЫС ЭНТЕРТЕЙМЕНТ бота", reply_markup=keyboard)
 
-# Ответ на команду Каталог
+# Ответ на команду Каталог, Тг канал и Отзывы
 @dp.message(F.text.lower() == "Каталог")
+async def cataloge(message: types.Message):
+    await message.answer("Выберите категорию:")
+
+@dp.message(F.text.lower() == "Тг Канал")
+async def cataloge(message: types.Message):
+    await message.answer("Выберите категорию:")
+
+@dp.message(F.text.lower() == "Отзывы")
 async def cataloge(message: types.Message):
     await message.answer("Выберите категорию:")
 
