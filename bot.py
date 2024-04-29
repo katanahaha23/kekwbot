@@ -19,6 +19,7 @@ async def check_sub_channels(channels, user_id):
 
 
 def start(message):
+    
     if check_sub_channels(channel, message.from_user.id):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Каталог')
