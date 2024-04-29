@@ -35,7 +35,7 @@ async def cmd_start(message: types.Message):
 async def cataloge(message: types.Message):
     await message.answer("Выберите категорию:")
 
-@dp.message(F.text.lower() == "тг Канал")
+@dp.message(F.text.lower() == "тг канал")
 async def cataloge(message: types.Message):
     await message.answer("Выберите категорию:")
 
