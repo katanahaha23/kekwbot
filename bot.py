@@ -6,6 +6,12 @@ from aiogram.filters.command import Command
 from aiogram import F
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+from aiogram import CallbackQuery
+from aiogram.types import Message
+from typing import Union
+from aiogram.filters import BaseFilter
+from aiogram.enums import ParseMode
+from aiogram import Formatting
 
 # Включаем логирование, чтобы не пропустить важные сообщения
 logging.basicConfig(level=logging.INFO)
@@ -13,6 +19,21 @@ logging.basicConfig(level=logging.INFO)
 bot = Bot(token="7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
 # Диспетчер
 dp = Dispatcher()
+router = Dispatcher()
+
+
+
+#проверка подписки на канал
+@router.callback_query(text=['subscription_check_but_pressed'])
+async def check_subs(callback: CallbackQuery, bot: Bot):
+    user_channel_status = await bot.get_chat_member(chat_id='-1002072999477', user_id=callback.from_user.id)
+
+    if user_channel_status.status != 'left':
+        await callback.answer('Спасибо за подписку!')
+    else:
+        await callback.answer('Для начала подпишись на наш канал')
+
+
 
 
 # Хэндлер на команду /start
@@ -77,6 +98,7 @@ async def nazad(message: types.Message):
         input_field_placeholder="Выберите..."
     )
     await message.answer("Че хотел?", reply_markup=keyboard)
+
 
 
 # Запуск процесса поллинга новых апдейтов
