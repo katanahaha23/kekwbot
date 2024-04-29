@@ -19,8 +19,8 @@ def start(message):
 def get_text_messages(message):
     if message.text == 'Каталог':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True) 
-        btn1 = types.KeyboardButton('Steam товары')
-        btn2 = types.KeyboardButton('Steam услуги')
+        btn1 = types.KeyboardButton('Товары')
+        btn2 = types.KeyboardButton('Услуги')
         btn3 = types.KeyboardButton('Telegram Premium')
         btn4 = types.KeyboardButton('Discord Nitro')
         btn5 = types.KeyboardButton('НАЗАД')
@@ -33,12 +33,12 @@ def get_text_messages(message):
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
-    if message.text == 'Steam товары':
+    if message.text == 'Товары':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
-        bot.send_message(message.from_user.id, "Выберите товар из списка:",reply_markup=markup)
-    elif message.text == 'Steam услуги':
+        bot.send_message(message.from_user.id, 'Выберите товар из списка:', reply_markup=markup)
+    elif message.text == 'Услуги':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
@@ -52,7 +52,7 @@ def get_text_messages(message):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вернуться')
         markup.add(btn1)
-        bot.send_message(message.from_user.id, "ты даун")
+        bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
     
 
 
