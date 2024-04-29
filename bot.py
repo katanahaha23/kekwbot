@@ -30,8 +30,6 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, "тут ссылка на канал")
     elif message.text == 'Контакты':
         bot.send_message(message.from_user.id, '@ccody')
-    
-
 
 @bot.message_handler(content_types=['text'])
 def get_texts(message):
