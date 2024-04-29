@@ -13,7 +13,15 @@ dp = Dispatcher()
 # Хэндлер на команду /start
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    await message.answer("Hello!")
+    
+    kb = [
+        [types.KeyboardButton(text="Каталог")],
+        [types.KeyboardButton(text="ТГ Канал")],
+        [types.KeyboardButton(text="Отзывы")]
+    ]
+    keyboard = types.ReplyKeyboardMarkup(keyboard=kb)
+    await message.answer("Приветствую тебя в боте СЫС ЭНТЕРТЕЙМЕНТ!")
+
 
 # Запуск процесса поллинга новых апдейтов
 async def main():
