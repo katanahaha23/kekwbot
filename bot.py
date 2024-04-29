@@ -15,18 +15,7 @@ dp = Dispatcher()
 
 #запуск бота через кнопку
 
-@dp.message(F.text.lower() == True)
-async def start(message: types.Message):
-    kb = [
-        [
-            types.KeyboardButton(text="/start"),
-        ],
-    ]
-    keyboard = types.ReplyKeyboardMarkup(
-        keyboard=kb,
-        resize_keyboard=True,
-    )
-    await message.answer(reply_markup=keyboard)
+
 
 # Хэндлер на команду /start
 @dp.message(Command("start"))
@@ -54,7 +43,8 @@ async def cataloge(message: types.Message):
             types.KeyboardButton(text="Steam товары"),
             types.KeyboardButton(text="Telegram Premium"),
             types.KeyboardButton(text="Discord Nitro"),
-            types.KeyboardButton(text="PornHub +")
+            types.KeyboardButton(text="PornHub +"),
+            types.KeyboardButton(text="Назад")
         ],
     ]
     keyboard = types.ReplyKeyboardMarkup(
