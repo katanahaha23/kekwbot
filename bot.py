@@ -1,4 +1,5 @@
 import asyncio
+from distutils.dep_util import newer
 import logging
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters.command import Command
@@ -73,9 +74,10 @@ async def nazad(message: types.Message):
     keyboard = types.ReplyKeyboardMarkup(
         keyboard=kb,
         resize_keyboard=True,
-        input_field_placeholder="Выберите..."
+        input_field_placeholder="Выберите...",
+        reply_markup=keyboard
     )
-    
+     
 
 
 # Запуск процесса поллинга новых апдейтов
