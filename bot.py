@@ -20,7 +20,7 @@ async def cmd_start(message: types.Message):
         [types.KeyboardButton(text="Отзывы")]
     ]
     keyboard = types.ReplyKeyboardMarkup(keyboard=kb)
-    await message.answer("Приветствую тебя в боте СЫС ЭНТЕРТЕЙМЕНТ!")
+    await message.answer("Приветствую тебя в боте СЫС ЭНТЕРТЕЙМЕНТ!", reply_markup=keyboard)
 
 
 # Запуск процесса поллинга новых апдейтов
