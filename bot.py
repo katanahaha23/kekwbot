@@ -15,7 +15,7 @@ bot = Bot(token="7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
 # Диспетчер
 dp = Dispatcher()
 
-channelz = ["opp", "-1002072999477", "https://t.me/farmcs2news"]
+channelz = ["ООФ ‘’FarmCS2 News’’", "-1002072999477", "https://t.me/farmcs2news"]
 
 
 
