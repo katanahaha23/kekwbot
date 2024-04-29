@@ -32,22 +32,8 @@ async def cmd_start(message: types.Message):
 
 # Ответ на команду Каталог
 @dp.message(F.text.lower() == "Каталог")
-async def cmd_cataloge(message: types.Message):
-    kb = [
-        [
-            types.KeyboardButton(text="Товары Steam"),
-            types.KeyboardButton(text="Услуги Steam"),
-            types.KeyboardButton(text="Discord Nitro"),
-            types.KeyboardButton(text="Telegram Premium"),
-            types.KeyboardButton(text="PornHub +")
-        ],
-    ]
-    keyboard = types.ReplyKeyboardMarkup(
-        keyboard=kb,
-        resize_keyboard=True,
-        input_field_placeholder="Выберите..."
-    )
-    await message.answer("Выберите категорию:", reply_markup=keyboard)
+async def cataloge(message: types.Message):
+    await message.answer("Выберите категорию:")
 
 
 # Запуск процесса поллинга новых апдейтов
