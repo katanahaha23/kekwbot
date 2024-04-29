@@ -13,6 +13,21 @@ bot = Bot(token="7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
 # Диспетчер
 dp = Dispatcher()
 
+#запуск бота через кнопку
+
+@dp.message(F.text.lower() == "")
+async def start(message: types.Message):
+    kb = [
+        [
+            types.KeyboardButton(text="/start"),
+        ],
+    ]
+    keyboard = types.ReplyKeyboardMarkup(
+        keyboard=kb,
+        resize_keyboard=True,
+    )
+    await message.answer(reply_markup=keyboard)
+
 # Хэндлер на команду /start
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
@@ -35,9 +50,11 @@ async def cmd_start(message: types.Message):
 async def cataloge(message: types.Message):
     kb = [
         [
-            types.KeyboardButton(text="Каталог"),
-            types.KeyboardButton(text="Тг Канал"),
-            types.KeyboardButton(text="Отзывы")
+            types.KeyboardButton(text="Steam услуги"),
+            types.KeyboardButton(text="Steam товары"),
+            types.KeyboardButton(text="Telegram Premium"),
+            types.KeyboardButton(text="Discord Nitro"),
+            types.KeyboardButton(text="PornHub +")
         ],
     ]
     keyboard = types.ReplyKeyboardMarkup(
@@ -51,18 +68,6 @@ async def cataloge(message: types.Message):
 # Ответ на команду ТГ Канал
 @dp.message(F.text.lower() == "тг канал")
 async def tg_chan(message: types.Message):
-    kb = [
-        [
-            types.KeyboardButton(text="Каталог"),
-            types.KeyboardButton(text="Тг Канал"),
-            types.KeyboardButton(text="Отзывы")
-        ],
-    ]
-    keyboard = types.ReplyKeyboardMarkup(
-        keyboard=kb,
-        resize_keyboard=True,
-        input_field_placeholder="Выберите..."
-    )
     await message.answer("https://t.me/farmcs2news")
 
 
@@ -73,7 +78,7 @@ async def review(message: types.Message):
     builder.row(types.InlineKeyboardButton(
         text="ОТЗЫВЫ", url="https://github.com")
     )
-    await message.answer('Выберите ссылку',reply_markup=builder.as_markup(),)
+    await message.answer('Нажми на ссылку',reply_markup=builder.as_markup(),)
 
 
 # Запуск процесса поллинга новых апдейтов
