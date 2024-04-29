@@ -75,7 +75,7 @@ async def nazad(message: types.Message):
         resize_keyboard=True,
         input_field_placeholder="Выберите..."
     )
-    await message.answer("Добро пожаловать в СЫС ЭНТЕРТЕЙМЕНТ бота", reply_markup=keyboard)
+    await message.answer("", reply_markup=keyboard)
 
 
 # Запуск процесса поллинга новых апдейтов
