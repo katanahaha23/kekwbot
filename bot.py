@@ -74,10 +74,9 @@ async def nazad(message: types.Message):
     keyboard = types.ReplyKeyboardMarkup(
         keyboard=kb,
         resize_keyboard=True,
-        input_field_placeholder="Выберите...",
-        reply_markup=keyboard
+        input_field_placeholder="Выберите..."
     )
-     
+    await message.answer("Че хотел?", reply_markup=keyboard)
 
 
 # Запуск процесса поллинга новых апдейтов
