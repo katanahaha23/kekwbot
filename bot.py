@@ -31,7 +31,7 @@ async def cmd_start(message: types.Message):
     await message.answer("Добро пожаловать в СЫС ЭНТЕРТЕЙМЕНТ бота", reply_markup=keyboard)
 
 @dp.message(F.text.lower() == "Каталог")
-async def with_puree(message: types.Message):
+async def cataloge(message: types.Message):
     kb = [
         [
             types.KeyboardButton(text="Товары Steam"),
@@ -46,7 +46,7 @@ async def with_puree(message: types.Message):
         resize_keyboard=True,
         input_field_placeholder="Выберите..."
     )
-    await message.reply("Выберите категорию:", reply_markup=keyboard)
+    await message.answer("Выберите категорию:", reply_markup=keyboard)
 
 
 # Запуск процесса поллинга новых апдейтов
