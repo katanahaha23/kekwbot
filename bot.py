@@ -6,12 +6,7 @@ from aiogram.filters.command import Command
 from aiogram import F
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from aiogram import CallbackQuery
-from aiogram.types import Message
-from typing import Union
-from aiogram.filters import BaseFilter
-from aiogram.enums import ParseMode
-from aiogram import GetChatMember
+
 
 # Включаем логирование, чтобы не пропустить важные сообщения
 logging.basicConfig(level=logging.INFO)
