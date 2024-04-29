@@ -11,7 +11,7 @@ from aiogram.types import Message
 from typing import Union
 from aiogram.filters import BaseFilter
 from aiogram.enums import ParseMode
-from aiogram import Formatting
+from aiogram import GetChatMember
 
 # Включаем логирование, чтобы не пропустить важные сообщения
 logging.basicConfig(level=logging.INFO)
@@ -19,19 +19,19 @@ logging.basicConfig(level=logging.INFO)
 bot = Bot(token="7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
 # Диспетчер
 dp = Dispatcher()
-router = Dispatcher()
+
+channelz = ["opp", "-1002072999477", "https://t.me/farmcs2news"]
 
 
 
 #проверка подписки на канал
-@router.callback_query(text=['subscription_check_but_pressed'])
-async def check_subs(callback: CallbackQuery, bot: Bot):
-    user_channel_status = await bot.get_chat_member(chat_id='-1002072999477', user_id=callback.from_user.id)
+async def check_sub(channels, user_id):
+    for channel in channels:
+        chat_member = await bot.get_chat_member(chat_id=channel[1],user_id=user_id)
+        if chat_member["status"] == "left":
+            return False
+    return True
 
-    if user_channel_status.status != 'left':
-        await callback.answer('Спасибо за подписку!')
-    else:
-        await callback.answer('Для начала подпишись на наш канал')
 
 
 
@@ -39,19 +39,23 @@ async def check_subs(callback: CallbackQuery, bot: Bot):
 # Хэндлер на команду /start
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    kb = [
-        [
-            types.KeyboardButton(text="Каталог"),
-            types.KeyboardButton(text="Тг Канал"),
-            types.KeyboardButton(text="Отзывы")
-        ],
-    ]
-    keyboard = types.ReplyKeyboardMarkup(
-        keyboard=kb,
-        resize_keyboard=True,
-        input_field_placeholder="Выберите..."
-    )
-    await message.answer("Добро пожаловать в СЫС ЭНТЕРТЕЙМЕНТ бота", reply_markup=keyboard)
+    if await check_sub(channelz, message.from_user.id):
+        kb = [
+            [
+                types.KeyboardButton(text="Каталог"),
+                types.KeyboardButton(text="Тг Канал"),
+                types.KeyboardButton(text="Отзывы")
+            ],
+        ]
+        keyboard = types.ReplyKeyboardMarkup(
+            keyboard=kb,
+            resize_keyboard=True,
+            input_field_placeholder="Выберите..."
+        )
+        await message.answer("Добро пожаловать в СЫС ЭНТЕРТЕЙМЕНТ бота", reply_markup=keyboard)
+    else:
+        await bot.send_message(message.from_user.id, "Подписка сначала Ковбой")
+
 
 # Ответ на команду Каталог
 @dp.message(F.text.lower() == "каталог")
