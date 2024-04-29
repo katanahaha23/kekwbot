@@ -12,14 +12,17 @@ bot = telebot.TeleBot('7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU')
 #ID Вашего канала
 chan_id = -1002072999477
 
-#Клавиатура для проверки подписки
-keyboard = telebot.types.InlineKeyboardMarkup()
-subscribe = telebot.types.InlineKeyboardButton(text="Подписаться", url="https://t.me/farmcs2news")
-check = telebot.types.InlineKeyboardButton(text="Проверить", callback_data="check")
-keyboard.add(subscribe)
-keyboard.add(check)
+@bot.callback_query_handler(func=lambda call: True)
+def c_listener(call):
+    if call.data == "check":
+        x = bot.get_chat_member(chan_id, call.message.chat.id)
 
-
+        if x.status == "member" or x.status == "creator" or x.status == "administrator":
+            bot.send_message(call.message.chat.id, "Добро пожаловать!")
+            cur.execute("INSERT INTO users VALUES(?)", (call.message.chat.id, ))
+            con.commit()
+        else:
+            bot.send_message(call.message.chat.id, "Вы не подписались!")
 
 
 @bot.message_handler(commands=['start'])
@@ -27,7 +30,7 @@ def start(message):
     users = cur.execute("SELECT id FROM users WHERE id = ?", (message.chat.id, )).fetchone()
     con.commit()
     if users == None:
-        bot.send_message(message.from_user.id, "Вы не подписались на канал")
+        bot.send_message(message.from_user.id, "Вы не подписались на канал: https://t.me/farmcs2news")
     else:
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Каталог')
@@ -35,6 +38,7 @@ def start(message):
         btn3 = types.KeyboardButton('Контакты')
         markup.add(btn1, btn2, btn3)
         bot.send_message(message.from_user.id, "Общая информация o боте будет в этом сообщении", reply_markup=markup)
+
 
 
 
