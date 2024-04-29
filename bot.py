@@ -60,6 +60,23 @@ async def review(message: types.Message):
     )
     await message.answer('Нажми на ссылку',reply_markup=builder.as_markup(),)
 
+# Ответ на команду Назад
+@dp.message(F.text.lower() == "назад")
+async def cmd_start(message: types.Message):
+    kb = [
+        [
+            types.KeyboardButton(text="Каталог"),
+            types.KeyboardButton(text="Тг Канал"),
+            types.KeyboardButton(text="Отзывы")
+        ],
+    ]
+    keyboard = types.ReplyKeyboardMarkup(
+        keyboard=kb,
+        resize_keyboard=True,
+        input_field_placeholder="Выберите..."
+    )
+    await message.answer(reply_markup=keyboard)
+
 
 # Запуск процесса поллинга новых апдейтов
 async def main():
