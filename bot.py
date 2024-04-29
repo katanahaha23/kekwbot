@@ -53,7 +53,14 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, "ты даун",reply_markup=markup)
     
     elif message.text == 'Вернуться':
-        get_text_messages(message)
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True) 
+        btn1 = types.KeyboardButton('Товары')
+        btn2 = types.KeyboardButton('Услуги')
+        btn3 = types.KeyboardButton('Telegram Premium')
+        btn4 = types.KeyboardButton('Discord Nitro')
+        btn5 = types.KeyboardButton('НАЗАД')
+        markup.add(btn1, btn2, btn3, btn4, btn5)
+        bot.send_message(message.from_user.id, 'че тебе надо выбирай', reply_markup=markup) 
 
 
 
