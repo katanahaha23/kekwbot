@@ -15,7 +15,7 @@ dp = Dispatcher()
 
 #запуск бота через кнопку
 
-@dp.message(F.text.lower() == "")
+@dp.message(F.text.lower() == True)
 async def start(message: types.Message):
     kb = [
         [
