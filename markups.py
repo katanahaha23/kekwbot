@@ -1,7 +1,7 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 from config import CHANNELS
 
-btnProfile = KeyboardButton("Профиль")
+btnProfile = KeyboardButton()
 profileKeyboard = ReplyKeyboardMarkup(resize_keyboard = True).add(btnProfile)
 
 def ShowChannels():
