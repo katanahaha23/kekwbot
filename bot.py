@@ -22,14 +22,14 @@ dp = Dispatcher()
 
 
 
-@dp.message_handler(commands=('start'))
+@dp.message(commands=('start'))
 async def alarm(message: types.Message):
     keyboard_markup = types.InlineKeyboardMarkup()
     user_id_btn = types.InlineKeyboardButton('Получить ID пользывателя из Inline кнопки', callback_data= 'user_id')
     keyboard_markup.row(user_id_btn)
     await message.answer(f"Ваш ID: {message.from_user.id}", reply_markup=keyboard_markup)
  
-@dp.callback_query_handler(text='user_id')
+@dp.callback_query(text='user_id')
 async def user_id_inline_callback(callback_query: types.CallbackQuery):
     await callback_query.answer(f"Ваш ID: {callback_query.from_user.id}", True)
 
