@@ -1,4 +1,4 @@
-from aiogram import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 from config import CHANNELS
 
 btnProfile = KeyboardButton("Профиль")
