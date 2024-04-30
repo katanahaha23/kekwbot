@@ -23,12 +23,18 @@ dp = Dispatcher()
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    user_channel_status = await bot.get_chat_member(chat_id=-1002072999477, user_id=message.from_user.id)
-    if user_channel_status["status"] != 'left':
-        pass
-        await bot.send_message(message.from_user.id, 'text if in group')
-    else:
-        await bot.send_message(message.from_user.id, 'text if not in group')
+    kb = [
+        [
+            types.KeyboardButton(text="С пюрешкой"),
+            types.KeyboardButton(text="Без пюрешки")
+        ],
+    ]
+    keyboard = types.ReplyKeyboardMarkup(
+        keyboard=kb,
+        resize_keyboard=True,
+        input_field_placeholder="Выберите способ подачи"
+    )
+    await message.answer("Как подавать котлеты?", reply_markup=keyboard)
 
 # Запуск процесса поллинга новых апдейтов
 async def main():
