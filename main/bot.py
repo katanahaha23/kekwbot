@@ -28,10 +28,10 @@ async def start(message: Message):
 @dp.message()
 async def echo(message: Message):
     answers = [
-        "че ты высрал?",
-        "завали ебало",
-        "чувак иди нахуй",
-        "ну давай высри еще",
+        "че ты высрал? Чтобы начать напиши /start",
+        "завали ебало и нажми /start",
+        "чувак иди нахуй. /start",
+        "ну давай высри еще. /start для начала.",
         "может напишешь уже /start ?"
     ]
     await message.reply(choice(answers))
