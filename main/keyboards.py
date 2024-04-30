@@ -10,7 +10,7 @@ main_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
             KeyboardButton(text="Каталог"),
-            KeyboardButton(text="ТГ Канал"),
+            KeyboardButton(text="Контакты"),
             KeyboardButton(text="Отзывы")
         ]
     ],
