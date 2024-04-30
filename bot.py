@@ -16,27 +16,17 @@ bot = Bot(token="7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
 # Диспетчер
 dp = Dispatcher()
 
+chan_id = -1002072999477
 
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    user_channel_status = await bot.get_chat_member(chat_id=-1002072999477, user_id=message.chat.id)
-    user_channel_status = re.findall(r"\w*", str(user_channel_status))
-    try:
-        if user_channel_status[70] != 'left':
-            await bot.send_message(message.from_user.id, 'выНО')
-            #Условие для "подписанных"
-        else:
-            await bot.send_message(message.chat.id, 'ТЫ ДАУН')
-            #Условие для тех, кто не подписан
-    except:
-        if user_channel_status[60] != 'left':
-            await bot.send_message(message.from_user.id, 'ГАВНО')
-            #Условие для "подписанных"
-        else:
-            await bot.send_message(message.from_user.id, 'ХАУЛПА')
-            #Условие для тех, кто не подписан
-
+    user_channel_status = await bot.get_chat_member(chat_id=-1002072999477, user_id='user_id')
+    if user_channel_status["status"] != 'left':
+        pass
+        await bot.send_message(message.from_user.id, 'text if in group')
+    else:
+        await bot.send_message(message.from_user.id, 'text if not in group')
 
 
 
