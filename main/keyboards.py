@@ -14,9 +14,6 @@ main_kb = ReplyKeyboardMarkup(
             KeyboardButton(text="Каталог"),
             KeyboardButton(text="Контакты"),
             KeyboardButton(text="Отзывы")
-        ],
-        [
-            KeyboardButton(text="Удалить сообщения в чате")
         ]
     ],
     resize_keyboard=True,
