@@ -7,7 +7,7 @@ from aiogram import F
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 import logging
-from aiogram import Bot, Dispatcher, executor, types 
+from aiogram import Bot, Dispatcher, types 
 
 
 
