@@ -21,7 +21,14 @@ async def echo(message: Message):
     msg = message.text.lower()
     if msg == "steam товары":
         await message.answer(f"Выберите интересующий вас товар: ", reply_markup=keyboards.steam_tovary_kb)
+    elif msg == "steam gifts [5$]":
+        await message.answer(f"Перейдите по ссылке и напишите продавцу:", reply_markup=keyboards.gifts_kb)
         
+
+
+
+
+
     elif msg == "каталог":
         await message.answer(f"Выберите интересующую вас категорию: ", reply_markup=keyboards.cataloge_kb)
     elif msg == "отзывы":
