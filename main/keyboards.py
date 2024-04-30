@@ -5,6 +5,8 @@ from aiogram.types import(
     InlineKeyboardMarkup
 
 )
+from aiogram.utils.keyboard import ReplyKeyboardBuilder, InlineKeyboardBuilder
+
 
 main_kb = ReplyKeyboardMarkup(
     keyboard=[
@@ -51,3 +53,5 @@ contacts_kb = InlineKeyboardMarkup(
         ]
     ]
 )
+
+
