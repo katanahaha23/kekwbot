@@ -6,6 +6,8 @@ from aiogram.filters.command import Command
 from aiogram import F
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+import config as cfg
+import markups as nav
 
 
 # Включаем логирование, чтобы не пропустить важные сообщения
@@ -15,7 +17,6 @@ bot = Bot(token="7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
 # Диспетчер
 dp = Dispatcher()
 
-channelz = ["ООФ ‘’FarmCS2 News’’", "-1002072999477", "https://t.me/farmcs2news"]
 
 
 
@@ -34,7 +35,7 @@ async def check_sub(channels, user_id):
 # Хэндлер на команду /start
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    if await check_sub(channelz, message.from_user.id):
+    if await check_sub(cfg.CHANNELS, message.from_user.id):
         kb = [
             [
                 types.KeyboardButton(text="Каталог"),
@@ -49,7 +50,7 @@ async def cmd_start(message: types.Message):
         )
         await message.answer("Добро пожаловать в СЫС ЭНТЕРТЕЙМЕНТ бота", reply_markup=keyboard)
     else:
-        await bot.send_message(message.from_user.id, "Подписка сначала Ковбой")
+        await bot.send_message(message.from_user.id, "Подписка сначала Ковбой", reply_markup=nav.showChannels())
 
 
 # Ответ на команду Каталог
