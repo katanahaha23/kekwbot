@@ -14,31 +14,28 @@ dp = Dispatcher()
 async def start(message: Message):
     await message.answer(f"Здарова {message.from_user.first_name}", reply_markup=keyboards.main_kb)
     
-@dp.message(F.text.lower()== "каталог")
-async def catal(message: Message):
-    await message.answer(f"Выберите интересующий вас товар: ", reply_markup=keyboards.cataloge_kb)
-
-@dp.message(F.text.lower()== "отзывы")
-async def otzyv(message: Message):
-    await message.answer(f"Отзыв вы можете написать нажав на кнопку под сообщением", reply_markup=keyboards.otzyv_kb)
-
-@dp.message(F.text.lower()== "контакты")
-async def contacts(message: Message):
-    await message.answer(f"Чтобы связаться с Админом канала нажмите на кнопку ниже", reply_markup=keyboards.contacts_kb)
-
-
 
 
 @dp.message()
 async def echo(message: Message):
-    answers = [
-        "че ты высрал? Чтобы начать напиши /start",
-        "завали ебало и нажми /start",
-        "чувак иди нахуй. /start",
-        "ну давай высри еще. /start для начала.",
-        "может напишешь уже /start ?"
-    ]
-    await message.reply(choice(answers))
+    msg = message.text.lower()
+
+    if msg == "каталог":
+        await message.answer(f"Выберите интересующий вас товар: ", reply_markup=keyboards.cataloge_kb)
+    elif msg == "отзывы":
+        await message.answer(f"Отзыв вы можете написать нажав на кнопку под сообщением", reply_markup=keyboards.otzyv_kb)
+    elif msg == "контакты":
+        await message.answer(f"Чтобы связаться с Админом канала нажмите на кнопку ниже", reply_markup=keyboards.contacts_kb)
+
+    else:
+        answers = [
+            "че ты высрал? Чтобы начать напиши /start",
+            "завали ебало и нажми /start",
+            "чувак иди нахуй. /start",
+            "ну давай высри еще. /start для начала.",
+            "может напишешь уже /start ?"
+        ]
+        await message.reply(choice(answers))
 
 
 
