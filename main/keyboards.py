@@ -79,7 +79,9 @@ accsprime_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
             KeyboardButton(text="Пустышки Prime CS2, maFiles"),
-            KeyboardButton(text="2 Ранг Prime CS2, maFiles"),
+            KeyboardButton(text="2 Ранг Prime CS2, maFiles")
+        ],
+        [
             KeyboardButton(text="Вернуться")
         ]
     ],
@@ -91,7 +93,9 @@ pustyshki_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
             KeyboardButton(text="2 Ранг, maFiles"),
-            KeyboardButton(text="1 Ранг, maFiles"),
+            KeyboardButton(text="1 Ранг, maFiles")
+        ],
+        [
             KeyboardButton(text="Вернуться")
         ]
     ],
