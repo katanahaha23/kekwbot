@@ -32,7 +32,7 @@ async def cmd_start(message: types.Message):
     builder.add(types.KeyboardButton(text="Отызвы")),
     builder.adjust(3)
 
-    username = Text("Hello", Bold(message.from_user.full_name))
+    username = Text("Выберите категорию ",(message.from_user.full_name))
     await message.answer(**username.as_kwargs(), reply_markup=builder.as_markup(resize_keyboard=True),)
      
 
