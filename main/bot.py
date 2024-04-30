@@ -26,6 +26,8 @@ async def echo(message: Message):
     if msg == "steam товары":
         await message.answer(f"Выберите интересующий вас товар: ", reply_markup=keyboards.steam_tovary_kb)
         
+
+        
     elif msg == "steam gifts [5$]":
         await message.answer(f"Перейдите по ссылке и напишите продавцу:", reply_markup=keyboards.gifts_kb)
 
@@ -34,6 +36,25 @@ async def echo(message: Message):
 
     elif msg == "пустышки":
         await message.answer(f"Выберите товар:", reply_markup=keyboards.pustyshki_kb)
+
+
+
+
+    elif msg == "2 ранг, mafiles":
+        await message.answer(f"Вам будет отправлена ссылка на товар: ", reply_markup=keyboards.gifts_kb)
+
+    elif msg == "1 ранг, mafiles":
+        await message.answer(f"Вам будет отправлена ссылка на товар: ", reply_markup=keyboards.gifts_kb)
+
+    elif msg == "пустышки prime cs2, mafiles":
+        await message.answer(f"Вам будет отправлена ссылка на товар: ", reply_markup=keyboards.gifts_kb)
+
+    elif msg == "2 ранг prime cs2, mafiles":
+        await message.answer(f"Вам будет отправлена ссылка на товар: ", reply_markup=keyboards.gifts_kb)
+
+
+
+
 
     elif msg == "назад":
         await message.answer(f"Выберите интересующую вас категорию: ", reply_markup=keyboards.cataloge_kb)
