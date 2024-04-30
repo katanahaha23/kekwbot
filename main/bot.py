@@ -38,6 +38,8 @@ async def echo(message: Message):
     elif msg == "назад":
         await message.answer(f"Выберите интересующую вас категорию: ", reply_markup=keyboards.cataloge_kb)
     
+    elif msg == "вернуться":
+        await message.answer(f"Выберите интересующий вас товар: ", reply_markup=keyboards.steam_tovary_kb)
     
 
 
