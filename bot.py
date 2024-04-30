@@ -8,7 +8,7 @@ from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 import logging
 from aiogram import Bot, Dispatcher, types
-from aiogram.utils import executor
+
 
 
 # Включаем логирование, чтобы не пропустить важные сообщения
@@ -32,9 +32,6 @@ async def alarm(message: types.Message):
 @dp.callback_query_handler(text='user_id')
 async def user_id_inline_callback(callback_query: types.CallbackQuery):
     await callback_query.answer(f"Ваш ID: {callback_query.from_user.id}", True)
-
-if __name__ == '__main__':
-    executor.start_polling(dp, skip_updates=True)
 
 # Запуск процесса поллинга новых апдейтов
 async def main():
