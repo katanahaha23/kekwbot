@@ -23,8 +23,8 @@ dp = Dispatcher()
 # chan_id = -1002072999477
 
 # Обработчик команды /start
-@dp.message_handler(commands=['start'])
-async def start(message: types.Message):
+@dp.message(Command("start"))
+async def cmd_start(message: types.Message):
     # Отправка приветственного сообщения
     await message.reply("Добро пожаловать! Этот бот предназначен для работы с подпиской на канал")
 
