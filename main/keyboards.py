@@ -74,3 +74,25 @@ gifts_kb = InlineKeyboardMarkup(
         ]
     ]
 )
+
+accsprime_kb = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text="Пустышки Prime CS2, maFiles"),
+            KeyboardButton(text="2 Ранг Prime CS2, maFiles")
+        ]
+    ],
+    resize_keyboard=True,
+    input_field_placeholder="Выберите товар:"
+)
+
+pustyshki_kb = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text="2 Ранг, maFiles"),
+            KeyboardButton(text="1 Ранг, maFiles")
+        ]
+    ],
+    resize_keyboard=True,
+    input_field_placeholder="Выберите товар:"
+)
