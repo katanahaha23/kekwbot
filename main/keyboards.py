@@ -54,4 +54,19 @@ contacts_kb = InlineKeyboardMarkup(
     ]
 )
 
-
+steam_tovary_kb = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text="Steam Gifts [5$]")
+        ],
+        [
+            KeyboardButton(text="Аккаунты CS2 Prime [13.5$ - 13.9$]")
+        ],
+        [
+            KeyboardButton(text="Пустышки")
+        ]
+    ],
+    resize_keyboard=True,
+    one_time_keyboard=True,
+    input_field_placeholder="Выберите товар:"
+)
