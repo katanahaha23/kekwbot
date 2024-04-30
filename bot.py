@@ -22,7 +22,7 @@ dp = Dispatcher()
 
 
 
-@dp.message_handler(commands=['start'])
+@dp.message_handler(commands=('start'))
 async def alarm(message: types.Message):
     keyboard_markup = types.InlineKeyboardMarkup()
     user_id_btn = types.InlineKeyboardButton('Получить ID пользывателя из Inline кнопки', callback_data= 'user_id')
