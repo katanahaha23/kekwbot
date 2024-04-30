@@ -16,7 +16,7 @@ bot = Bot(token="7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
 # Диспетчер
 dp = Dispatcher()
 
-chan_id = -1002072999477
+# chan_id = -1002072999477
 
 
 @dp.message(Command("start"))
