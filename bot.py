@@ -23,7 +23,7 @@ dp = Dispatcher()
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    await bot.send_message(message.from_user.id, message.from_user.first_name)
+    await bot.send_message(message.from_user.id, message.from_user.id)
 
 
 # Запуск процесса поллинга новых апдейтов
