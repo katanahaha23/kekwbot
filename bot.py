@@ -8,7 +8,7 @@ from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 import logging
 from aiogram import Bot, Dispatcher, types
-
+from aiogram.utils.formatting import Text, Bold
 
 
 # Включаем логирование, чтобы не пропустить важные сообщения
@@ -24,14 +24,14 @@ dp = Dispatcher()
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    user_id = message.from_user.full_name
-
+    user_name = Text((message.from_user.full_name))
+    
     builder = ReplyKeyboardBuilder()
     builder.add(types.KeyboardButton(text="Каталог")),
     builder.add(types.KeyboardButton(text="ТГ Канал")),
     builder.add(types.KeyboardButton(text="Отызвы")),
     builder.adjust(3)
-    await message.answer("Выберите категорию:", user_id, reply_markup=builder.as_markup(resize_keyboard=True),)
+    await message.answer("Выберите категорию:",**user_name.as_kwargs(), reply_markup=builder.as_markup(resize_keyboard=True),)
      
 
 
