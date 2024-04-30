@@ -1,4 +1,5 @@
 import asyncio
+from random import choice
 
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command
@@ -17,12 +18,13 @@ async def start(message: Message):
 
 @dp.message()
 async def echo(message: Message):
-    i = [
-        f"че ты высрал?",
-        f"завали ебало",
-        f"чувак иди нахуй"
+    answers = [
+        "че ты высрал?",
+        "завали ебало",
+        "чувак иди нахуй"
     ]
-    await message.reply(i)
+    await message.reply(choice(answers))
+
 
 
 
