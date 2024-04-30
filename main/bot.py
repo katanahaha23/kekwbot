@@ -75,8 +75,8 @@ async def echo(message: Message):
     elif msg == "контакты":
         await message.answer(f"Чтобы связаться с Админом канала нажмите на кнопку ниже", reply_markup=keyboards.contacts_kb)
     elif msg == "удалить сообщения в чате":
-        await bot.delete_message(message.chat.id, message.message_id)
-        await message.answer(f"Чат очищен.", reply_markup=keyboards.cataloge_kb)
+        await bot.delete_messages(message.chat.id, message.message_id)
+        await message.answer(f"Чат очищен.", reply_markup=keyboards.main_kb)
 
 
 
