@@ -3,7 +3,7 @@ from random import choice
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command
 from aiogram.types import Message
-
+from aiogram.methods.delete_message import DeleteMessage
 import keyboards
 
 bot = Bot("7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
@@ -74,7 +74,11 @@ async def echo(message: Message):
         await message.answer(f"Отзыв вы можете написать нажав на кнопку под сообщением", reply_markup=keyboards.otzyv_kb)
     elif msg == "контакты":
         await message.answer(f"Чтобы связаться с Админом канала нажмите на кнопку ниже", reply_markup=keyboards.contacts_kb)
-    
+    elif msg == "удалить сообщения в чате":
+        await bot.delete_message(message.chat.id, message.message_id)
+        await message.answer(f"Чат очищен.", reply_markup=keyboards.cataloge_kb)
+
+
 
 
 
