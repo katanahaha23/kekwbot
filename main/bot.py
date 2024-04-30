@@ -18,6 +18,10 @@ async def start(message: Message):
 async def catal(message: Message):
     await message.answer(f"Выберите интересующий вас товар: ", reply_markup=keyboards.cataloge_kb)
 
+@dp.message(F.text.lower()== "отзывы")
+async def otzyv(message: Message):
+    await message.answer(f"Отзыв вы можете написать нажав на кнопку под сообщением", reply_markup=keyboards.otzyv_kb)
+
 
 
 
