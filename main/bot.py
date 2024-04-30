@@ -22,6 +22,10 @@ async def catal(message: Message):
 async def otzyv(message: Message):
     await message.answer(f"Отзыв вы можете написать нажав на кнопку под сообщением", reply_markup=keyboards.otzyv_kb)
 
+@dp.message(F.text.lower()== "контакты")
+async def contacts(message: Message):
+    await message.answer(f"Чтобы связаться с Админом канала нажмите на кнопку ниже", reply_markup=keyboards.contacts_kb)
+
 
 
 
