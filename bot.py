@@ -7,8 +7,8 @@ from aiogram import F
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 import logging
-from aiogram import Bot, Dispatcher, types, executor
-
+from aiogram import Bot, Dispatcher, types
+from aiogram.utils import executor
 
 
 # Включаем логирование, чтобы не пропустить важные сообщения
