@@ -23,14 +23,7 @@ dp = Dispatcher()
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    user_id = message.from_user.id
-    chan_id = -1002072999477
-    user_channel_status = await bot.get_chat_member(chat_id=chan_id, user_id=user_id)
-    if user_channel_status["status"] != 'left':
-        pass
-        await bot.send_message(message.from_user.id, 'text if in group')
-    else:
-        await bot.send_message(message.from_user.id, 'text if not in group') 
+    await bot.send_message(message.from_user.id, message.from_user.first_name)
 
 
 # Запуск процесса поллинга новых апдейтов
