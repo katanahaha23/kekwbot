@@ -57,13 +57,12 @@ contacts_kb = InlineKeyboardMarkup(
 steam_tovary_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="Steam Gifts [5$]")
-        ],
-        [
+            KeyboardButton(text="Steam Gifts [5$]"),
             KeyboardButton(text="Аккаунты CS2 Prime [13.5$ - 13.9$]")
         ],
         [
-            KeyboardButton(text="Пустышки")
+            KeyboardButton(text="Пустышки"),
+            KeyboardButton(text="НАЗАД")       
         ]
     ],
     resize_keyboard=True,
