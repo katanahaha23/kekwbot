@@ -6,8 +6,7 @@ from aiogram.filters.command import Command
 from aiogram import F
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-import config as cfg
-import markups as nav
+import re
 
 
 # Включаем логирование, чтобы не пропустить важные сообщения
@@ -17,41 +16,32 @@ bot = Bot(token="7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
 # Диспетчер
 dp = Dispatcher()
 
+chan_id = -1002072999477
 
-
-
-#проверка подписки на канал
-async def check_sub(channels, user_id):
-    for channel in channels:
-        chat_member = await bot.get_chat_member(chat_id=channel[1],user_id=user_id)
-        if chat_member["status"] == "left":
-            return False
-    return True
-
-
-
-
-
-# Хэндлер на команду /start
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    if await check_sub(cfg.CHANNELS, message.from_user.id):
-        kb = [
-            [
-                types.KeyboardButton(text="Каталог"),
-                types.KeyboardButton(text="Тг Канал"),
-                types.KeyboardButton(text="Отзывы")
-            ],
-        ]
-        keyboard = types.ReplyKeyboardMarkup(
-            keyboard=kb,
-            resize_keyboard=True,
-            input_field_placeholder="Выберите..."
-        )
-        await message.answer("Добро пожаловать в СЫС ЭНТЕРТЕЙМЕНТ бота", reply_markup=keyboard)
-    else:
-        await bot.send_message(message.from_user.id, "Подписка сначала Ковбой", reply_markup=nav.showChannels())
+    user_channel_status = await bot.get_chat_member(chat_id=chan_id, user_id=message.chat.id)
+    user_channel_status = re.findall(r"\w*", str(user_channel_status))
+    try:
+        if user_channel_status[70] != 'left':
+            #Условие для "подписанных"
+        
+            await bot.send_message(message.chat.id, '')
+            #Условие для тех, кто не подписан
+    except:
+        if user_channel_status[60] != 'left':
+            await bot.send_message(message.from_user.id, '')
+            #Условие для "подписанных"
+        else:
+            await bot.send_message(message.from_user.id, '')
+            #Условие для тех, кто не подписан
 
+
+
+
+    
+    
+    
 
 # Ответ на команду Каталог
 @dp.message(F.text.lower() == "каталог")
