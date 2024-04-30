@@ -21,21 +21,14 @@ dp = Dispatcher()
 # chan_id = -1002072999477
 
 
-@dp.message(commands=['start'])
-async def alarm(message: types.Message):
-    keyboard_markup = types.InlineKeyboardMarkup()
-    user_id_btn = types.InlineKeyboardButton('Получить ID пользывателя из Inline кнопки', callback_data= 'user_id')
-    keyboard_markup.row(user_id_btn)
-    await message.answer(f"Ваш ID: {message.from_user.id}", reply_markup=keyboard_markup)
- 
-@dp.callback_query_handler(text='user_id')
-async def user_id_inline_callback(callback_query: types.CallbackQuery):
-    await callback_query.answer(f"Ваш ID: {callback_query.from_user.id}", True)
-
-
-    
-    
-    
+@dp.message(Command["start"])
+async def cmd_start(message: types.Message):
+    user_channel_status = await bot.get_chat_member(chat_id=-1002072999477, user_id=message.from_user.id)
+    if user_channel_status["status"] != 'left':
+        pass
+        await bot.send_message(message.from_user.id, 'text if in group')
+    else:
+        await bot.send_message(message.from_user.id, 'text if not in group')
 
 # Ответ на команду Каталог
 @dp.message(F.text.lower() == "каталог")
