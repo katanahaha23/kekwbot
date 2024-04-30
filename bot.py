@@ -24,8 +24,14 @@ dp = Dispatcher()
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    username = Text((message.from_user.full_name))
-    await message.answer(**username.as_kwargs(), bot.get_chat_member(chat_id=-1002072999477))
+    user_id = message.from_user.full_name
+    user_channel_status = await bot.get_chat_member(chat_id='@farmcs2news', user_id=user_id)
+
+    if user_channel_status["status"] != 'left':
+        pass
+    else:
+        await bot.send_message(message.from_user.id, 'text if not in group')
+    
      
 
 
