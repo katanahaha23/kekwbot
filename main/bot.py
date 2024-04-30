@@ -17,7 +17,12 @@ async def start(message: Message):
 
 @dp.message()
 async def echo(message: Message):
-    await message.reply(f"Че ты высрал?")
+    i = [
+        f"че ты высрал?",
+        f"завали ебало",
+        f"чувак иди нахуй"
+    ]
+    await message.reply(i)
 
 
 
