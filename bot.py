@@ -30,7 +30,7 @@ async def cmd_start(message: types.Message):
 
     # Проверка подписки на канал
     channel = '-1002072999477'
-    subscribed = await bot.get_chat_member(channel, message.from_user.id)
+    subscribed = await bot.get_chat_member(channel, message.from_user.full_name)
     if subscribed.status == 'left':
         await bot.send_message(chat_id=message.chat.id, text='Для работы с ботом необходимо подписаться на наш канал: https://t.me/{}'.format(channel), disable_web_page_preview=True)
     else:
