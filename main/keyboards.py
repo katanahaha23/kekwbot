@@ -36,4 +36,13 @@ cataloge_kb = ReplyKeyboardMarkup(
     input_field_placeholder="Выберите одну чушь из спискa:"
 )
 
-
+otzyv_kb = InlineKeyboardMarkup(
+    keyboard=[
+        [
+            InlineKeyboardButton(url="https://www.youtube.com/@ex4mpl3")
+        ]
+    ],
+    resize_keyboard=True,
+    one_time_keyboard=True,
+    input_field_placeholder="Выберите одну чушь из спискa:"
+)
