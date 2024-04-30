@@ -8,9 +8,10 @@ from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 import logging
 from aiogram import Bot, Dispatcher, types
+
 from aiogram.utils.formatting import Text, Bold
 
-from aiogram import State, StatesGroup
+
 
 # Включаем логирование, чтобы не пропустить важные сообщения
 logging.basicConfig(level=logging.INFO)
@@ -20,9 +21,6 @@ bot = Bot(token="7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
 dp = Dispatcher()
 
 # chan_id = -1002072999477
-class SubscriptionState(StatesGroup):
-    waiting_for_subscription = State()
-    waiting_for_confirmation = State()
 
 # Обработчик команды /start
 @dp.message_handler(commands=['start'])
@@ -35,7 +33,6 @@ async def start(message: types.Message):
     subscribed = await bot.get_chat_member(channel, message.from_user.id)
     if subscribed.status == 'left':
         await bot.send_message(chat_id=message.chat.id, text='Для работы с ботом необходимо подписаться на наш канал: https://t.me/{}'.format(channel), disable_web_page_preview=True)
-        await SubscriptionState.waiting_for_subscription.set()
     else:
         await bot.send_message(chat_id=message.chat.id, text='Ваш текущий баланс')
 
