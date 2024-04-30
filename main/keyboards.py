@@ -66,3 +66,11 @@ steam_tovary_kb = ReplyKeyboardMarkup(
     resize_keyboard=True,
     input_field_placeholder="Выберите товар:"
 )
+
+gifts_kb = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(text="Вход в ДАНЖН...", url="https://select-place.ru/product/1734")
+        ]
+    ]
+)
