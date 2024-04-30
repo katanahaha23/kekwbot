@@ -24,13 +24,15 @@ dp = Dispatcher()
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
+    user_id = message.from_user.full_name
+
     builder = ReplyKeyboardBuilder()
     builder.add(types.KeyboardButton(text="Каталог")),
     builder.add(types.KeyboardButton(text="ТГ Канал")),
     builder.add(types.KeyboardButton(text="Отызвы")),
     builder.adjust(3)
-    await message.answer("Выберите категорию:",reply_markup=builder.as_markup(resize_keyboard=True),)
-    
+    await message.answer("Выберите категорию:", user_id, reply_markup=builder.as_markup(resize_keyboard=True),)
+     
 
 
 
