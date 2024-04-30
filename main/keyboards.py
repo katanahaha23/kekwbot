@@ -43,3 +43,11 @@ otzyv_kb = InlineKeyboardMarkup(
         ]
     ]
 )
+
+contacts_kb = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(text="КОНТАКТЫ", url="https://t.me/Ccody")
+        ]
+    ]
+)
