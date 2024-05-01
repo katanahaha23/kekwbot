@@ -26,12 +26,12 @@ async def echo(message: Message):
 
 # выдает стим товары
     if msg == "steam товары":
-        await message.answer(f"Выберите интересующий вас товар:")
+        await message.answer(f"Выберите интересующий вас товар:",reply_markup=keyboards.steam_tovary_kb)
 
 
 # выдает стим услуги
     elif msg == "steam услуги":
-        await message.answer(f"Выберите интересующую вас услугу:")
+        await message.answer(f"Выберите интересующую вас услугу:", reply_markup=keyboards.steam_uslugi_kb)
 
 # выдает телеграмм премиум
     elif msg == "telegram premium":
