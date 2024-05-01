@@ -13,7 +13,7 @@ dp = Dispatcher()
 @dp.message(Command("start"))
 async def start(message: Message):
     await bot.delete_message(message.chat.id, message.message_id)
-    await message.answer(f"Здарова {message.from_user.first_name}", reply_markup=keyboards.main_kb)
+    await message.answer(f"Приветствуем тебя, {message.from_user.first_name}, в нашем боте - Бутик Гифтов", reply_markup=keyboards.main_kb)
     
     
 
@@ -108,7 +108,7 @@ async def echo(message: Message):
 
     
     elif msg == "главное меню":
-        await message.answer(f"Приветствуем вас в нашем боте - Бутик Гифтов!", reply_markup=keyboards.main_kb)
+        await message.answer(f"Доброго вам дня!", reply_markup=keyboards.main_kb)
 
         
     
