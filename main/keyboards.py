@@ -29,7 +29,7 @@ cataloge_kb = ReplyKeyboardMarkup(
         ],
         [
             KeyboardButton(text="Discord Nitro"),
-            KeyboardButton(text="PornHub Premium")
+            KeyboardButton(text="Главное меню")
         ]
     ],
     resize_keyboard=True,
@@ -70,7 +70,7 @@ steam_tovary_kb = ReplyKeyboardMarkup(
 gifts_kb = InlineKeyboardMarkup(
     inline_keyboard=[
         [
-            InlineKeyboardButton(text="Вход в ДАНЖН...", url="https://select-place.ru/product/1734")
+            InlineKeyboardButton(text="Ссылка на продавца...", url="https://select-place.ru/product/1734")
         ]
     ]
 )
@@ -103,4 +103,18 @@ pustyshki_kb = ReplyKeyboardMarkup(
     input_field_placeholder="Выберите товар:"
 )
 
-
+steam_uslugi_kb = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text="Прокачка"),
+            KeyboardButton(text="Фарм CS2"),
+            KeyboardButton(text="Мгновенное пополнение Steam")
+        ],
+        [
+            KeyboardButton(text="Фермер с нуля"),
+            KeyboardButton(text="НАЗАД")       
+        ]
+    ],
+    resize_keyboard=True,
+    input_field_placeholder="Выберите товар:"
+)
