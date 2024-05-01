@@ -80,13 +80,13 @@ async def echo(message: Message):
 
 # прокачка
     elif msg == "прокачка 2-го ранг":
-        await message.answer(f"📌 Прокачка 2-го приватного ранга\n💵 От 10 до 100 acc`s — 0.5$/шт\n💵 От 100+++ acc`s — 0.45$/шт")
+        await message.answer(f"📌 Прокачка 2-го приватного ранга\n1. Полученный руками, прокачка по 1 аккаунту за раз\n💵 10-50 шт —  0,8$\шт\n💵 50-∞ шт — 0,7$\шт\n\n2. Полученный захватом сервера, прокачка по 12 аккаунтов за раз\n💵 10-50 шт —  0.6$\шт\n💵 50-∞ шт — 0.5$\шт")
         await message.answer("💳 ВАРИАНТЫ ОПЛАТЫ 💳\nЛюбые карты — Visa | МИР | MasterCard\nКрипта — USDT | TRX | BTC | ETH \nLZT 🐊 — к цене +8%\nКлючи TF2🔑 — по цене уточнять у продавца", reply_markup=keyboards.gifts_kb)
 
 
 # фарм кс 
     elif msg == "фарм cs2":
-        await message.answer(f"📌 Фарм ваших аккаунтов панелью 👨‍💻 \n⚡️ - 30% — от 10 до 100 аккаунтов\n⚡️ - 25% — от 100 до 250 аккаунтов\n⚡️ - 20% — от 250 до 500 аккаунтов")
+        await message.answer(f"📌 Фарм ваших аккаунтов панелью на ваыбор (Tedon\FSM) 👨‍💻 \n⚡️ 30% — от 10 до 100 аккаунтов\n⚡️ 25% — от 100 до 250 аккаунтов\n⚡️ 20% — от 250 и более")
         await message.answer("💳 ВАРИАНТЫ ОПЛАТЫ 💳\nЛюбые карты — Visa | МИР | MasterCard\nКрипта — USDT | TRX | BTC | ETH \nLZT 🐊 — к цене +8%\nКлючи TF2🔑 — по цене уточнять у продавца", reply_markup=keyboards.gifts_kb)
 
 
@@ -94,7 +94,7 @@ async def echo(message: Message):
 
 # фермер с нуля (нахуй)
     elif msg == "фермер с нуля":
-        await message.answer(f"📌 Обучающие курсы \n💵 Фермер с нуля — 49.99 $")
+        await message.answer(f"📌 Обучающие курсы\n💵 Фермер с нуля — 49.99 $\nВ обучение входят различные гайды, сборки пк и меры предосторожности от VAC")
         await message.answer("💳 ВАРИАНТЫ ОПЛАТЫ 💳\nЛюбые карты — Visa | МИР | MasterCard\nКрипта — USDT | TRX | BTC | ETH \nLZT 🐊 — к цене +8%\nКлючи TF2🔑 — по цене уточнять у продавца", reply_markup=keyboards.gifts_kb)
 
 
