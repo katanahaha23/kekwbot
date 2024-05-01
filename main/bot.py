@@ -47,11 +47,11 @@ async def echo(message: Message):
 
 # стим товары
     elif msg == "steam gifts [5$]":
-        await message.answer(f"📌 Price Gift Card 👀\n⚙️ 40HKD — 5.1$ дает на баланс (Подходит для 🇺🇦,🇰🇿 и остальных СНГ стран кроме 🇷🇺)\n💵 Цена — 5.30 $ \n⚙️ 5$ USA — 5$ дает на баланс (Подходит для 🇺🇸 и других ближайших стран)\n💵Цена — 5.30 $ ", reply_markup=keyboards.gifts_kb)
+        await message.answer(f"📌 Price Gift Card 👀\n👾 40HKD — 5.1$ дает на баланс (Подходит для 🇺🇦,🇰🇿 и остальных СНГ стран кроме 🇷🇺)\n💵 Цена — 5.30 $ \n👾 5$ USA — 5$ дает на баланс (Подходит для 🇺🇸 и других ближайших стран)\n💵Цена — 5.30 $ ", reply_markup=keyboards.gifts_kb)
         
 # прайм кс
     elif msg == "аккаунты cs2 prime [13.5$ - 13.9$]":
-        await message.answer(f"Выберите товар:", reply_markup=keyboards.accsprime_kb)
+        await message.answer(f"📌 Аккаунты Prime CS2 \n💵 Пустышка Prime CS2 — 13.90 $\n💵 2 ранг Prime CS2 — 14.90 $\n💵 Мгновенное пополнение на Prime CS2 — 15.90 $ ", reply_markup=keyboards.gifts_kb)
         
 # пустышки
     elif msg == "пустышки":
@@ -60,39 +60,32 @@ async def echo(message: Message):
 
 
 
-# прайм кс
-    elif msg == "2 ранг, mafiles":
-        
-        await message.answer(f"Перейдите по ссылке и напишите продавцу:", reply_markup=keyboards.gifts_kb)
-       
 
-    elif msg == "1 ранг, mafiles":
-        await message.answer(f"Перейдите по ссылке и напишите продавцу:", reply_markup=keyboards.gifts_kb)
         
 # пустышки
     elif msg == "пустышки prime cs2, mafiles":
-        await message.answer(f"Перейдите по ссылке и напишите продавцу:", reply_markup=keyboards.gifts_kb)
+        await message.answer(f"📌 Аккаунты пустышки, 1 ранг, maFiles\n💵 50шт   — 12.50 $\n💵 100шт — 25.00 $", reply_markup=keyboards.gifts_kb)
        
 
     elif msg == "2 ранг prime cs2, mafiles":
-        await message.answer(f"Перейдите по ссылке и напишите продавцу:", reply_markup=keyboards.gifts_kb)
+        await message.answer(f"📌 Готовые аккаунты пустышки, имеется 2 ранг, maFiles \n💵 10шт    — 17.00 $\n💵 25шт    — 42.50 $\n💵 50шт    — 85.00 $\n💵 100шт  — 170.00 $", reply_markup=keyboards.gifts_kb)
        
 
 # прокачка
     elif msg == "прокачка":
-            await message.answer(f"Перейдите по ссылке и напишите продавцу:", reply_markup=keyboards.gifts_kb)
+            await message.answer(f"📌 Прокачка 2-го приватного ранга\n💵 От 10 до 100 acc`s — 0.5$/шт\n💵 От 100+++ acc`s — 0.45$/шт", reply_markup=keyboards.gifts_kb)
 
 # фарм кс 
     elif msg == "фарм cs2":
-        await message.answer(f"Перейдите по ссылке и напишите продавцу:", reply_markup=keyboards.gifts_kb)
+        await message.answer(f"📌 Фарм ваших аккаунтов панелью 👨‍💻 \n⚡️ - 30% — от 10 до 100 аккаунтов\n⚡️ - 25% — от 100 до 250 аккаунтов\n⚡️ - 20% — от 250 до 500 аккаунтов", reply_markup=keyboards.gifts_kb)
 
 # мгновенное пополнение
     elif msg == "мгновенное пополнение steam":
-        await message.answer(f"Перейдите по ссылке и напишите продавцу:", reply_markup=keyboards.gifts_kb)
+        await message.answer(f"📌 Мгновенное пополнение на Prime CS2 \n💵 Цена — 15.90 $", reply_markup=keyboards.gifts_kb)
 
 # фермер с нуля (нахуй)
     elif msg == "фермер с нуля":
-        await message.answer(f"Перейдите по ссылке и напишите продавцу:", reply_markup=keyboards.gifts_kb)
+        await message.answer(f"📌 Обучающие курсы \n💵 Фермер с нуля — 49.99 $", reply_markup=keyboards.gifts_kb)
 
 
 
