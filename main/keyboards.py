@@ -56,7 +56,7 @@ steam_tovary_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
             KeyboardButton(text="Steam Gifts [5$]"),
-            KeyboardButton(text="Аккаунты CS2 Prime [13.5$ - 13.9$]")
+            KeyboardButton(text="Аккаунты CS2 Prime [13.75$ - 14.25$]")
         ],
         [
             KeyboardButton(text="Пустышки"),
@@ -95,9 +95,8 @@ pustyshki_kb = ReplyKeyboardMarkup(
 steam_uslugi_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="Прокачка"),
+            KeyboardButton(text="Прокачка 2-го ранга"),
             KeyboardButton(text="Фарм CS2"),
-            KeyboardButton(text="Мгновенное пополнение Steam")
         ],
         [
             KeyboardButton(text="Фермер с нуля"),
