@@ -55,7 +55,7 @@ async def echo(message: Message):
         await message.answer(f"📌 Price Gift Card 👀\n👾 40HKD — 5.1 $ дает на баланс (Подходит для 🇺🇦,🇰🇿 и остальных СНГ стран кроме 🇷🇺)\n💵 Цена — 5.00 $")
         await message.answer("💳 ВАРИАНТЫ ОПЛАТЫ 💳\nЛюбые карты — Visa | МИР | MasterCard\nКрипта — USDT | TRX | BTC | ETH \nLZT 🐊 — к цене +8%\nКлючи TF2🔑 — по цене уточнять у продавца", reply_markup=keyboards.gifts_kb)
 # прайм кс
-    elif msg == "аккаунты cs2 prime [13.5$ - 13.9$]":
+    elif msg == "аккаунты cs2 prime [13.75$ - 14.25$]":
         await message.answer(f"📌 Аккаунты Prime CS2 \n💵 Пустышка, maFiles, Prime CS2 — 13.75 $\n💵 2 ранг, maFiles, Prime CS2 — 14.25 $")
         await message.answer("💳 ВАРИАНТЫ ОПЛАТЫ 💳\nЛюбые карты — Visa | МИР | MasterCard\nКрипта — USDT | TRX | BTC | ETH \nLZT 🐊 — к цене +8%\nКлючи TF2🔑 — по цене уточнять у продавца", reply_markup=keyboards.gifts_kb)
 # пустышки
