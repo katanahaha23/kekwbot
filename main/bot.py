@@ -47,7 +47,7 @@ async def echo(message: Message):
 
 # стим товары
     elif msg == "steam gifts [5$]":
-        await message.answer(f" Price Gift Card \n 40HKD — 5.1$ дает на баланс (Подходит для 🇺🇦,🇰🇿 и остальных СНГ стран кроме 🇷🇺)\n Цена — 5.30 $ \n 5$ USA — 5$ дает на баланс (Подходит для 🇺🇸 и других ближайших стран)\n Цена — 5.30 $ ", reply_markup=keyboards.gifts_kb)
+        await message.answer(f"📌 Price Gift Card 👀\n⚙️ 40HKD — 5.1$ дает на баланс (Подходит для 🇺🇦,🇰🇿 и остальных СНГ стран кроме 🇷🇺)\n💵 Цена — 5.30 $ \n⚙️ 5$ USA — 5$ дает на баланс (Подходит для 🇺🇸 и других ближайших стран)\n💵Цена — 5.30 $ ", reply_markup=keyboards.gifts_kb)
         
 # прайм кс
     elif msg == "аккаунты cs2 prime [13.5$ - 13.9$]":
