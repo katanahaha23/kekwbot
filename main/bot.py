@@ -51,7 +51,7 @@ async def echo(message: Message):
         
 # прайм кс
     elif msg == "аккаунты cs2 prime [13.5$ - 13.9$]":
-        await message.answer(f"📌 Аккаунты Prime CS2 \n💵 Пустышка Prime CS2 — 13.90 $\n💵 2 ранг Prime CS2 — 14.90 $\n💵 Мгновенное пополнение на Prime CS2 — 15.90 $ ", reply_markup=keyboards.gifts_kb)
+        await message.answer(f"📌 Аккаунты Prime CS2 \n💵 Пустышка Prime CS2 — 13.90 $\n💵 2 ранг Prime CS2 — 14.90 $", reply_markup=keyboards.gifts_kb)
         
 # пустышки
     elif msg == "пустышки":
@@ -63,11 +63,11 @@ async def echo(message: Message):
 
         
 # пустышки
-    elif msg == "пустышки prime cs2, mafiles":
+    elif msg == "1 ранг, mafiles":
         await message.answer(f"📌 Аккаунты пустышки, 1 ранг, maFiles\n💵 50шт   — 12.50 $\n💵 100шт — 25.00 $", reply_markup=keyboards.gifts_kb)
        
 
-    elif msg == "2 ранг prime cs2, mafiles":
+    elif msg == "2 ранг, mafiles":
         await message.answer(f"📌 Готовые аккаунты пустышки, имеется 2 ранг, maFiles \n💵 10шт    — 17.00 $\n💵 25шт    — 42.50 $\n💵 50шт    — 85.00 $\n💵 100шт  — 170.00 $", reply_markup=keyboards.gifts_kb)
        
 
