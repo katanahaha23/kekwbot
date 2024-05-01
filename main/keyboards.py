@@ -39,7 +39,7 @@ cataloge_kb = ReplyKeyboardMarkup(
 otzyv_kb = InlineKeyboardMarkup(
     inline_keyboard=[
         [
-            InlineKeyboardButton(text="ОТЗЫВЫ", url="https://www.youtube.com/@ex4mpl3")
+            InlineKeyboardButton(text="ОТЗЫВЫ", url="https://t.me/otzyvi_giftmarket")
         ]
     ]
 )
@@ -70,7 +70,7 @@ steam_tovary_kb = ReplyKeyboardMarkup(
 gifts_kb = InlineKeyboardMarkup(
     inline_keyboard=[
         [
-            InlineKeyboardButton(text="Ссылка на продавца...", url="https://select-place.ru/product/1734")
+            InlineKeyboardButton(text="Ссылка на продавца...", url="https://t.me/Ccody")
         ]
     ]
 )
