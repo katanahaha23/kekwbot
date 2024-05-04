@@ -35,13 +35,13 @@ async def echo(message: Message):
 
 # выдает телеграмм премиум
     elif msg == "telegram premium":
-        await message.answer(f"💎 Telegram Premium 1 месяц — 240₽/2.7$\n💎 Telegram Premium 12 месяцев — 1750₽/19.1$")
+        await message.answer(f"💎 Telegram Premium 1 месяц — 240₽|2.7$\n💎 Telegram Premium 12 месяцев — 1750₽|19.1$")
         await message.answer("💳 ВАРИАНТЫ ОПЛАТЫ 💳\nЛюбые карты — Visa | МИР | MasterCard\nКрипта — USDT | TRX | BTC | ETH \nLZT 🐊 — к цене +8%\nКлючи TF2🔑 — по цене уточнять у продавца", reply_markup=keyboards.gifts_kb)
 
 
 # выдает дискорд нитро
     elif msg == "discord nitro":
-        await message.answer(f"🚀 Discord Nitro BASIC 1 Месяц — 230₽/2.6$\n🚀 Discord Nitro BASIC 12 Месяц — 2000₽/21.8$\n\n🚀 Discord Nitro FULL 1 Месяц — 440₽/4.8$\n🚀 Discord Nitro FULL 12 Месяц — 4000₽/43.7$")
+        await message.answer(f"🚀 Discord Nitro BASIC 1 Месяц — 230₽|2.6$\n🚀 Discord Nitro BASIC 12 Месяц — 2000₽|21.8$\n\n🚀 Discord Nitro FULL 1 Месяц — 440₽|4.8$\n🚀 Discord Nitro FULL 12 Месяц — 4000₽|43.7$")
         await message.answer("💳 ВАРИАНТЫ ОПЛАТЫ 💳\nЛюбые карты — Visa | МИР | MasterCard\nКрипта — USDT | TRX | BTC | ETH \nLZT 🐊 — к цене +8%\nКлючи TF2🔑 — по цене уточнять у продавца", reply_markup=keyboards.gifts_kb)
 
 
