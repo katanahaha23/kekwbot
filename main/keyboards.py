@@ -110,7 +110,7 @@ steam_uslugi_kb = ReplyKeyboardMarkup(
 channel_kb = InlineKeyboardMarkup(
     inline_keyboard=[
         [
-            InlineKeyboardButton(text="КАНАЛ", url="https://t.me/farmcs2news")
+            InlineKeyboardButton(text="ПОДПИСАТЬСЯ", url="https://t.me/farmcs2news")
         ]
     ]
 )
