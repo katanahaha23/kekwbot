@@ -4,10 +4,10 @@ from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram.methods.delete_message import DeleteMessage
+
 import keyboards as keyboards
 
-
-from . import check_sub
+import check_sub as check_sub
 
 
 bot = Bot("7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
