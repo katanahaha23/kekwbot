@@ -5,9 +5,9 @@ from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram.methods.delete_message import DeleteMessage
 
-import main.keyboards as keyboards
+import keyboards as keyboards
 
-import main.check_sub as check_sub 
+import check_sub as check_sub 
 
 
 bot = Bot("7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
