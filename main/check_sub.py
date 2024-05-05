@@ -2,7 +2,7 @@ from typing import Any, Awaitable, Callable, Dict
 from aiogram import BaseMiddleware
 from aiogram.types import Message, TelegramObject
 
-from keyboards import channel_kb
+from main.keyboards import channel_kb
 
 
 class CheckSubscription(BaseMiddleware):
