@@ -153,10 +153,10 @@ async def echo(message: Message):
     else:
         await bot.delete_message(message.chat.id, message.message_id)
         answers = [
-            "че ты высрал? Чтобы начать напиши /start",
-            "завали ебало и нажми /start",
-            "чувак иди нахуй. /start",
-            "ну давай высри еще. /start для начала.",
+            "Чтобы начать напиши /start",
+            "Нажми /start",
+            "Чувак, /start",
+            "/start для начала.",
             "может напишешь уже /start ?"
         ]
         
