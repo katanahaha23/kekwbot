@@ -17,7 +17,7 @@ class CheckSubscription(BaseMiddleware):
 
         if chat_member.status == "left":
             await event.answer(
-                "Подписался быстро лох!",
+                "Для использования бота, подпишитесь на наш канал!",
                 reply_markup=channel_kb
 
             )
