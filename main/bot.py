@@ -7,14 +7,14 @@ from aiogram.methods.delete_message import DeleteMessage
 
 import keyboards as keyboards
 
-import check_sub as check_sub 
+from check_sub import CheckSubscription
 
 
 bot = Bot("7053088731:AAFgdmKAZ643ZuyYddEIOOGB5ckt9TdEEMU")
 dp = Dispatcher()
 
 
-dp.message.middleware(check_sub())
+dp.message.middleware(CheckSubscription())
 
 
 @dp.message(Command("start"))
