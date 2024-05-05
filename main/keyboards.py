@@ -106,3 +106,11 @@ steam_uslugi_kb = ReplyKeyboardMarkup(
     resize_keyboard=True,
     input_field_placeholder="Выберите товар:"
 )
+
+channel_kb = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(text="КАНАЛ", url="https://t.me/farmcs2news")
+        ]
+    ]
+)
