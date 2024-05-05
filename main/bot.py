@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram.methods.delete_message import DeleteMessage
-import main.keyboards as keyboards
+import keyboards as keyboards
 
 
 from . import check_sub
