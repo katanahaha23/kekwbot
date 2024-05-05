@@ -139,7 +139,7 @@ async def echo(message: Message):
         await message.answer(f"Выберите интересующую вас категорию: ", reply_markup=keyboards.cataloge_kb)
 
     elif msg == "отзывы":
-        await message.answer(f"Отзыв вы можете написать нажав на кнопку под сообщением", reply_markup=keyboards.otzyv_kb)
+        await message.answer(f"Отзывы вы можете посмотреть нажав на кнопку под сообщением", reply_markup=keyboards.otzyv_kb)
         
     elif msg == "контакты":
         await message.answer(f"Чтобы связаться с Админом канала нажмите на кнопку ниже", reply_markup=keyboards.contacts_kb)
